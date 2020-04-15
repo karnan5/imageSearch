@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/header'); %>
+  </head>
+  <body>
+    <header>
+      <%- include ('../partials/head')%>
+    </header>
+ <div id="simple">
+    <header class="create slideanim text-center">    
+        <h1><span>Portfolio</span> <span style="color:red"><b></b>Design</span></h1>
+        <hr
+                    style="
+                      width: 50px;
+                      height: 5px;
+                      text-align: center;
+                      background-color: rgb(8, 59, 66);
+                    "
+                  />
+      </header>
+    </div>
+    <!-- Search form -->
+    <form
+      id="terms"
+      class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 my-5"
+      action="/search"
+      method="GET"
+    >
+      <div class="wrap">
+        <div class="search">
+          <input
+            type="text"
+            class="searchTerm"
+            name="imgSearch"
+            placeholder="What are you looking for?"
+          />
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  
+     
+           <!--Start Portfolio Section-->
+           <div id="portfolio"class="offset">
+            <div class="container">
+                <div class="gallery slideanim">
+                    <% data["results"].forEach((values)=>{ %>
+                 <img src="<%=
+                 values['urls']['small'] %>
+             " class="single-image" ></img>
+             <% }) %>  
+                </div>
+            </div>
+           </div>
+
+    <footer>
+      <%- include ('../partials/footer'); %>
+    </footer>
+  </body>
+</html>

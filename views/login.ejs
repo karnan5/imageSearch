@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('./partials/header'); %>
+  </head>
+  <body>
+    <header>
+      <%- include ('./partials/head')%>
+    </header>
+
+    <form class="align-center" action="/login" method="POST">
+      <section style="margin: 110px 10px 10px 10px;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+              <div class="row">
+                <div class="col text-center">
+                  <h1>LOGIN</h1>
+                  <hr
+                    style="
+                      width: 50px;
+                      height: 5px;
+                      text-align: center;
+                      background-color: rgb(8, 59, 66);
+                    "
+                  />
+                  <p class="text-h3">
+                    Creativity is intelligence having fun.
+                  </p>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col mt-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    placeholder="User Name"
+                  />
+                </div>
+              </div>
+              <div class="row align-items-center mt-4">
+                <div class="col">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-start">
+                <div class="col">
+                  <button class="btn btn-lg btn-primary mt-4 w-50">
+                    Sign In
+                  </button>
+                  <br />
+                  <a href="/register">Please Sign Up Here !</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+    <footer>
+      <%- include ('./partials/footer'); %>
+    </footer>
+  </body>
+</html>

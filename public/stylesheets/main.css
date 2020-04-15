@@ -1,0 +1,209 @@
+/*----------------------nav section------------------------*/
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+  font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #033552;
+  border-bottom: 2px solid #000;
+}
+/*-------seervice section-----------------------*/
+#services {
+  padding: 90px 0 50px 0;
+  box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+.section-bg {
+  background: linear-gradient(to bottom left, #033552 40%, #000 100%);
+  color: #000;
+}
+.new-edit-title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.new-edit-title {
+  font-family: "Josefin Sans", sans-serif;
+  color: #2f2d4e;
+  line-height: 1.2;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.card_btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+a .card_btn:hover {
+  color: #50d8af;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 30px 0px rgba(46, 61, 73, 0.9);
+  border-bottom: 3px solid rgba(2, 204, 186, 0.8);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #033552 40%, #000 100%);
+}
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+.made_by {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+/*----------search -------------------------*/
+#terms .search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+#terms .searchTerm {
+  width: 100%;
+  border: 3px solid #00b4cc;
+  border-right: none;
+  padding: 5px;
+  height: 38px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000;
+}
+
+#terms .searchTerm:focus {
+  color: #00b4cc;
+}
+
+#terms .searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#terms .wrap {
+  width: 65%;
+  position: absolute;
+  margin: 28px 20px 0 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*--------------------portfolio search images-----------------------
+--------------------------------------------------------------------*/
+.gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  transition: 500ms;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+.gallery img:hover {
+  opacity: 1;
+}
+
+#simple header {
+  display: grid;
+  margin: 86px 0 0 0;
+}
+
+@media screen and (max-width: 767px) {
+  .gallery {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .gallery div {
+    margin: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  .gallery div {
+    margin: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/*=====End Portfolio Section=====*/

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/header'); %>
+  </head>
+  <body>
+    <header>
+      <%- include ('../partials/head')%>
+    </header>
+    <div class="container my-5" style="padding-top: 75px;">
+      <h1 class="new-edit-title text-center">View Details</h1>
+      <hr
+        style="
+          width: 120px;
+          height: 5px;
+          text-align: center;
+          background-color: rgb(6, 61, 78);
+        "
+      />
+      <div class="row my-5">
+        <div class="col-md-3 order-md-first order-last">
+          <p class="lead new-edit-title" style="color: black;">Just Simple</p>
+          <div class="list-group">
+            <button
+              type="button"
+              class="list-group-item list-group-item-action active"
+            >
+              Cras justo odio
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Dapibus ac facilisis in
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Morbi leo risus
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Porta ac consectetur ac
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+              disabled
+            >
+              Vestibulum at eros
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Cras justo odio
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Dapibus ac facilisis in
+            </button>
+          </div>
+        </div>
+        <div class="col-md-9 order-md-last order-first">
+          <div class="thumbnail">
+            <img
+              class="img-responsive w-100"
+              src="<%= campgrounds.image %>"
+              alt="images"
+            />
+            <div class="caption-full p-3">
+              <h4 class="text-right">$9.00</h4>
+              <h4>
+                <a href="#"><h1><%= campgrounds.name %></h1></a>
+              </h4>
+              <p><%= campgrounds.description %></p>
+              <p>
+                Submitted by
+                <strong> <em><%= campgrounds.author.username %></em></strong>
+              </p>
+              <% if(currentUser &&
+              campgrounds.author.id.equals(currentUser._id)){ %>
+              <a
+                class="btn btn-success btn-xs"
+                href="/campgrounds/<%= campgrounds._id%>/edit"
+                >Edit</a
+              >
+              <form
+                class="d-inline"
+                action="/campgrounds/<%= campgrounds._id %>?_method=DELETE"
+                method="POST"
+              >
+                <button class="btn btn-danger btn-xs">Delete</button>
+              </form>
+              <% } %>
+            </div>
+          </div>
+          <div class="jumbotron">
+            <div class="text-right">
+              <a
+                class="btn btn-success"
+                href="/campgrounds/<%= campgrounds._id %>/comments/new"
+                >Add New Comment</a
+              >
+              <hr />
+              <% campgrounds.comments.forEach((data)=>{ %>
+              <div class="row">
+                <div class="col-md-12">
+                  <strong class="float-left"
+                    ><%= data.author.username %></strong
+                  >
+                  <strong><span class="pull-right">10 days ago</span></strong>
+                  <br />
+                  <p style="float: left;"><%= data.text %></p>
+                  <% if(currentUser && data.author.id.equals(currentUser._id)){
+                  %>
+
+                  <div>
+                    <a
+                      class="btn btn-xs btn-success"
+                      href="/campgrounds/<%= campgrounds._id %>/comments/<%= data.id %>/edit"
+                      >Edit</a
+                    >
+                    <form
+                      class="d-inline"
+                      action="/campgrounds/<%= campgrounds._id %>/comments/<%= data.id %>?_method=DELETE"
+                      method="post"
+                    >
+                      <button class="btn btn-xs btn-danger">Delete</button>
+                    </form>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+              <% })%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <%- include ('../partials/footer'); %>
+    </footer>
+  </body>
+</html>

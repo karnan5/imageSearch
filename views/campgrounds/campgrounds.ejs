@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/header'); %>
+  </head>
+  <body>
+    <header>
+      <%- include ('../partials/head')%>
+    </header>
+    <section id="services" class="section-bg">
+      <div class="container my-5">
+        <div class="jumbotron text-center">
+          <h1 class="new-edit-title" style="font-size: 35px;">
+            Welcome & Make Your Images
+          </h1>
+
+          <a class="btn btn-primary" href="/campgrounds/new"
+            >Create New Image's</a
+          >
+        </div>
+      </div>
+    </section>
+    <div class="container my-5">
+      <div class="main text-center">
+        <h1 class="new-edit-title">Responsive Campgrounds Layout</h1>
+        <hr
+          style="
+            width: 50px;
+            height: 8px;
+            text-align: center;
+            background-color: aqua;
+          "
+        />
+        <ul class="cards">
+          <% campgrounds.forEach((item)=>{ %>
+
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <img src="<%= item.image %>" />
+              </div>
+              <div class="card_content">
+                <h2 class="card_title my-3"><%= item.name %></h2>
+                <a href="/campgrounds/<%= item._id %>">
+                  <button class="btn card_btn">Read More</button></a
+                >
+              </div>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <%- include ('../partials/footer'); %>
+    </footer>
+  </body>
+</html>
