@@ -15,10 +15,7 @@ const flash = require("connect-flash");
 //const seedDB = require("./seeds");
 
 const url = process.env.DATABASEURL || "mongodb://localhost/final_project";
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(url);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
