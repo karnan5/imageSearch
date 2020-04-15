@@ -14,8 +14,8 @@ const methodOverride = require("method-override");
 const flash = require("connect-flash");
 //const seedDB = require("./seeds");
 
-const url = process.env.DATABASEURL || "mongodb://localhost/final_project";
-mongoose.connect(url);
+const urls = process.env.DATABASEURL || "mongodb://localhost/final_project";
+mongoose.connect(urls);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
