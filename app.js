@@ -16,7 +16,7 @@ const flash = require("connect-flash");
 
 const urls = process.env.DATABASEURL || "mongodb://localhost/final_project";
 mongoose.connect(urls);
-
+const baseUrl = process.env.BASE_URL || "http://localhost:3000";
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -53,6 +53,4 @@ app.use(authenticatedLists);
 
 //seedDB();
 
-app.listen(process.env.PORT, process.env.IP, () =>
-  console.log("server is started")
-);
+app.listen(baseUrl, () => console.log("server is started"));
